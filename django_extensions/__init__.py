@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-VERSION = (2, 0, 7)
+VERSION = (2, 0, 7, 'st', '1')
 
 # Dynamically calculate the version based on VERSION tuple
 if len(VERSION) > 2 and VERSION[2] is not None:
@@ -9,5 +9,8 @@ if len(VERSION) > 2 and VERSION[2] is not None:
         str_version = "%s.%s_%s" % VERSION[:3]
 else:
     str_version = "%s.%s" % VERSION[:2]
+
+if len(VERSION) == 5:
+    str_version = "%s.%s.%s+%s.%s" % VERSION
 
 __version__ = str_version
